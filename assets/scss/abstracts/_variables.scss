@@ -28,17 +28,17 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    #79A9F5;
+$blue:    #2875f2;
 $indigo:  #C45F90;
-$purple:  #A16AE8;
+$purple:  #4800a6;
 $pink:    #FC8BC0;
-$red:     #F85C70;
-$orange:  #FF8882;
+$red:     #e1203a;
+$orange:  #e35637;
 $yellow:  #FAD02C;
-$green:   #A3C14A;
+$green:   rgb(45, 186, 40);
 $teal:    #20c997;
 $cyan:    #47D8E0;
-$primary: #ff7a57;
+$primary: #0f29d2;
 
 $colors: ();
 $colors: map-merge((
