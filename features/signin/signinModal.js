@@ -1,44 +1,45 @@
-/* .js file to establish the setup account functionality of my blog website */
-/* Before a user can signin they need to create an account first */
+/* .js file enabling the sign in functionality of my blog website */
+
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
-export default function AccountSetupModal() {
+export default function SigninModal() {
     const [show, setShow] = useState(false);
     const history = useHistory();
     const { login } = useAuth();
     
     const handleClose = () => setShow(false);
-    const handleCreateAccount = () => setShow(true);
+    const handleShow = () => setShow(true);
     
-    async function handleCreateAccount() {
-        await handleCreateAccount();
+    async function handleSignin() {
+        await login();
         history.push('/account');
     }
     
     return (
         <>
         <Button variant="outline-primary" onClick={handleShow}>
-            Create an Account
+            Sign In
         </Button>
     
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-            <Modal.Title>Create Account</Modal.Title>
+            <Modal.Title>Sign In</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Really? Are you sure?</Modal.Body>
+            <Modal.Body>Are you sure you want to sign in?</Modal.Body>
             <Modal.Footer>
             <Button variant="outline-secondary" onClick={handleClose}>
                 Cancel
             </Button>
-            <Button variant="outline-primary" onClick={handleCreateAccount}>
-                Create Account
+            <Button variant="outline-primary" onClick={handleSignin}>
+                Sign In
             </Button>
             </Modal.Footer>
         </Modal>
         </>
     );
-    
-}
+    }
+
+// Path: features/signin/signinModal.js
